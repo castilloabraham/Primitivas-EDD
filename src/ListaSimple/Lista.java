@@ -375,4 +375,23 @@ public class Lista {
 
         return copia;
     }
+    
+    
+    /**
+    * Convierte la lista simple en circular, haciendo que el último nodo apunte al primero.
+    */
+   public void hacerCircular() {
+       if (!isEmpty() && pLast.getpNext() == null) {
+           pLast.setpNext(pFirst);
+       }
+   }
+
+   /**
+    * Convierte la lista circular en simple, eliminando el enlace del último nodo al primero.
+    */
+   public void hacerLineal() {
+       if (!isEmpty() && pLast.getpNext() == pFirst) {
+           pLast.setpNext(null);
+       }
+   }
 }
